@@ -43,6 +43,8 @@ jobs:
           python3 -m pip install --upgrade pip
           pip install pyyaml
           pip install -r requirements.txt
+      - name: Install canvas dependencies
+        run: sudo apt-get update && sudo apt-get install -y libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - uses: iterative/setup-cml@v1
       - name: Run training script
         env:
